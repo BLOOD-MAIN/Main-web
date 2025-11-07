@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
@@ -25,9 +24,9 @@ export function PremiumLoginForm({ role }: PremiumLoginFormProps) {
     setIsLoading(true)
 
     try {
-      // Admin credentials
+      // ✅ Admin credentials (updated)
       if (role === "admin") {
-        if (email === "blood-xmd" && password === "1DWFAW2G") {
+        if (email === "fghia2840@gmail.com" && password === "1DWFAW2G") {
           login({ email, role: "admin" })
           await new Promise((resolve) => setTimeout(resolve, 800))
           router.push("/admin/dashboard")
@@ -35,7 +34,7 @@ export function PremiumLoginForm({ role }: PremiumLoginFormProps) {
         }
       }
 
-      // User login
+      // ✅ User login
       if (role === "user") {
         if (email && password) {
           login({ email, role: "user" })
@@ -67,23 +66,25 @@ export function PremiumLoginForm({ role }: PremiumLoginFormProps) {
                 {role === "admin" ? "Admin" : "User"} Portal
               </h1>
               <p className="text-sm text-foreground/60">
-                {role === "admin" ? "Secure access to blood-xmd administration" : "Connect to your blood-xmd account"}
+                {role === "admin"
+                  ? "Secure access to blood-xmd administration"
+                  : "Connect to your blood-xmd account"}
               </p>
             </div>
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Username/Email Input */}
+              {/* Email Input */}
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-semibold text-foreground/80">
-                  {role === "admin" ? "Admin Username" : "Email Address"}
+                  Email Address
                 </label>
                 <input
                   id="email"
-                  type={role === "admin" ? "text" : "email"}
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={role === "admin" ? "Enter admin username" : "your@email.com"}
+                  placeholder="your@email.com"
                   className="w-full px-4 py-3 bg-input border border-border/50 rounded-lg text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all duration-200"
                   required
                   disabled={isLoading}
@@ -114,10 +115,12 @@ export function PremiumLoginForm({ role }: PremiumLoginFormProps) {
                 </div>
               )}
 
-              {/* Demo hint for admin */}
+              {/* Admin Demo Hint */}
               {role === "admin" && (
                 <div className="p-3 bg-primary/10 border border-primary/30 rounded-lg">
-                  <p className="text-xs text-primary/80 font-mono">Demo: blood-xmd / 1DWFAW2G</p>
+                  <p className="text-xs text-primary/80 font-mono">
+                    Demo Admin: fghia2840@gmail.com / 1DWFAW2G
+                  </p>
                 </div>
               )}
 
