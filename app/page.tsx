@@ -86,7 +86,7 @@ export default function HomePage() {
             <Card className="bg-card/50 backdrop-blur border-border/50 p-8 hover:border-secondary/30 transition-all duration-300 hover:bg-card/70 group">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center group-hover:from-secondary/30 group-hover:to-secondary/20 transition-all duration-300">
-                  <span className="text-2xl">🧠</span>
+                  <span className="text-2xl">💥</span>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">Main Bot</h3>
